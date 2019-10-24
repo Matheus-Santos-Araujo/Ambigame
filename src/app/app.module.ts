@@ -1,86 +1,59 @@
-import { DialogverinscricaoPage } from './../pages/dialogverinscricao/dialogverinscricao';
-import { DialogeditarmodalidadePage } from './../pages/dialogeditarmodalidade/dialogeditarmodalidade';
-import { DialogaddtopicosPage } from './../pages/dialogaddtopicos/dialogaddtopicos';
-import { ModalidadePageModule } from './../pages/modalidade/modalidade.module';
-import { EscolhadancasPageModule } from './../pages/escolhadancas/escolhadancas.module';
-import { EscolhalutasPageModule } from './../pages/escolhalutas/escolhalutas.module';
+import { FormulariodescartePage } from './../pages/formulariodescarte/formulariodescarte';
+import { EmpresasPage } from './../pages/empresas/empresas';
+import { LoginPage } from './../pages/login/login';
+import { CadastroPage } from './../pages/cadastro/cadastro';
+import { StorageloginProvider } from './../providers/storagelogin/storagelogin';
+import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-
-import { MyApp } from './app.component'; 
-import { HomePage } from '../pages/home/home';
-import { SobreempresaPage } from './../pages/sobreempresa/sobreempresa';
-import { SobrenudalPage } from './../pages/sobrenudal/sobrenudal';
-import { ContatoPage } from './../pages/contato/contato';
-import { EscolhadancasPage } from './../pages/escolhadancas/escolhadancas';
-import { EscolhalutasPage } from './../pages/escolhalutas/escolhalutas';
-import { MapaPage } from './../pages/mapa/mapa'
-import { Camera } from '@ionic-native/camera'
-
-import { IonicPageModule } from 'ionic-angular';
-import { HttpModule } from '@angular/http';
+import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { MyApp } from './app.component';
 import { IonicStorageModule } from '@ionic/storage';
+
+import { AboutPage } from '../pages/about/about';
+import { ContactPage } from '../pages/contact/contact';
+import { HomePage } from '../pages/home/home';
+import { TabsPage } from '../pages/tabs/tabs';
+import { DescartePage } from './../pages/descarte/descarte';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { StorageloginProvider } from '../providers/storagelogin/storagelogin';
-import { ServidorservletProvider } from '../providers/servidorservlet/servidorservlet';
-import { EmailComposer } from '@ionic-native/email-composer';
-import { Geolocation } from '@ionic-native/geolocation';
-import { Validators } from '@angular/forms';
 
 @NgModule({
   declarations: [
     MyApp,
+    AboutPage,
+    ContactPage,
     HomePage,
-    SobreempresaPage,
-    SobrenudalPage,
-    ContatoPage,
-    MapaPage,
-    DialogaddtopicosPage,
-    DialogaddtopicosPage,
-    DialogeditarmodalidadePage,
-    DialogverinscricaoPage
-    //EscolhadancasPage,
-    //EscolhalutasPage
+    TabsPage,
+    DescartePage,
+    LoginPage,
+    CadastroPage,
+    EmpresasPage,
+    FormulariodescartePage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
-    HttpModule,
-    EscolhalutasPageModule,
-    EscolhadancasPageModule,
-    ModalidadePageModule,
-    IonicPageModule.forChild(HomePage), 
-  ],
-  exports: [
-    HomePage
+    IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    AboutPage,
+    ContactPage,
     HomePage,
-    SobreempresaPage,
-    SobrenudalPage,
-    ContatoPage,
-    EscolhadancasPage,
-    EscolhalutasPage,
-    MapaPage,
-    DialogaddtopicosPage,
-    DialogeditarmodalidadePage,
-    DialogverinscricaoPage
+    DescartePage,
+    TabsPage,
+    LoginPage,
+    CadastroPage,
+    EmpresasPage,
+    FormulariodescartePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
     StorageloginProvider,
-    ServidorservletProvider,
-    Validators,
-    Geolocation,
-    EmailComposer,
-    Camera
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
 export class AppModule {}

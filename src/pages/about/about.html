@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-navbar color="secondary">
+      <ion-title>
+        AmbiGame
+      </ion-title>
+      <ion-buttons end>
+          <button ion-button icon-only (click)="Deslogar()">
+              <ion-icon name="log-out" width="35px"  height="35px"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+<ion-content padding>
+  <ion-item>
+    <ion-label style="color: #a0a0a0;" floating>Email</ion-label>
+    <ion-input name="email" value="Matheus Santos Araújo" type="text"></ion-input>
+</ion-item>
+
+<ion-item>
+    <ion-label style="color: #a0a0a0;" floating>Senha</ion-label>
+    <ion-input name="senha" value="12345" type="password"></ion-input>
+</ion-item>
+<ion-item>
+<ion-label style="color: #a0a0a0;" floating>Endereço</ion-label>
+<ion-input name="endereco" value="Rua Tereza Alencar - 224" type="text"></ion-input>
+</ion-item>
+<ion-item>
+<ion-label style="color: #a0a0a0;" floating>Telefone</ion-label>
+<ion-input name="telefone"  value="99168483" type="text"></ion-input>
+</ion-item>
+<ion-item>
+<ion-label style="color: #a0a0a0;" floating>CPF</ion-label>
+<ion-input name="cpf" value="61861581370" type="text"></ion-input>
+</ion-item>
+<br>
+<button ion-button color="secondary" style="margin: auto; display:block;" type="submit" (click)="cadastrar()" outline>EDITAR CONTA</button>
+
+</ion-content>
